@@ -1,0 +1,199 @@
+/* Challenge CSS */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  line-height: 1.6;
+  background-color: #202021;
+  width: 100%;
+  height: 100vh;
+}
+
+.container {
+  /* Add your styles here */
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  align-items: center;
+  height: 100vh;
+}
+
+.header {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 20px 10px;
+  margin-top: 20px;
+}
+
+h1 {
+  text-align: center;
+  color: rgb(195, 94, 76);
+}
+
+.subtitle {
+  text-align: center;
+  color: #9d9191;
+  font-size: 13px;
+  letter-spacing: 1.5px;
+}
+
+.pricing-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 30px;
+  margin-top: 30px;
+  width: 750px;
+  max-height: 500px;
+  height: 500px;
+}
+
+.pricing-card {
+  /* Add your styles here */
+  background-color: #29292b;
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  border-radius: 10px;
+  position: relative;
+  width: 300px;
+  height: 480px;
+  border: 1px solid rgb(107, 106, 102, 0.2);
+}
+
+.pricing-card:hover {
+  box-shadow: 0 0 10px rgba(238, 216, 216, 0.5);
+}
+
+.card-header {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  position: absolute;
+  top: 30px;
+  height: 50px;
+}
+h2 {
+  color: #fff;
+  font-size: 15px;
+  margin-bottom: 20px;
+}
+
+.icon {
+  font-size: 30px;
+}
+
+.popular-tag {
+  background-color: #fbd503;
+  color: #000000;
+  padding: 5px 15px;
+  border-radius: 20px;
+  position: absolute;
+  top: -12px;
+  font-size: 9px;
+  font-weight: 750;
+  letter-spacing: 0.1em;
+}
+
+.price-block {
+  margin-top: 120px;
+  background-color: rgba(88, 85, 85, 0.2);
+  color: #c35e4c;
+  width: 80%;
+  border-radius: 15px;
+  margin-bottom: 20px;
+  padding: 10px;
+}
+
+.price {
+  font-size: 30px;
+  text-align: center;
+  font-weight: 700;
+}
+
+.period {
+  font-size: 10px;
+  text-transform: uppercase;
+  text-align: center;
+  color: #9d9191;
+}
+
+.features {
+  /* background-color: #c35e4c; */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  /* line-height: 3em; */
+  align-items: start;
+  padding: 30px 0;
+  width: 220px;
+  height: 150px;
+}
+
+.features li {
+  list-style-type: none;
+  padding: 10px 20px;
+  font-size: 0.7em;
+}
+
+.features li.disabled {
+  color: #958c8c;
+  /* text-decoration: line-through; */
+}
+
+.join-btn {
+  /* background-color: blue; */
+  padding: 10px 40px;
+  border-radius: 10px;
+  border: 2px solid #c35e4c;
+  background-color: transparent;
+  color: #c35e4c;
+  font-weight: 600;
+  font-size: 0.7em;
+  margin-bottom: 10px;
+}
+
+.join-btn:hover {
+  background-color: #c35e4c;
+  color: #fff;
+  cursor: pointer;
+}
+
+/* Custom Class Modifiers */
+.warrior {
+  border: 1px solid #c35e4c;
+  background-color: rgb(195, 94, 76, 0.2);
+}
+
+.champion {
+  /* Add your styles here */
+  background-color: rgb(121, 117, 29, 0.3);
+  color: #fff;
+  border: 1px solid #e4ca3a;
+}
+
+.champion .price {
+  /* Add your styles here */
+  color: #e4ca3a;
+}
+
+.champion .join-btn {
+  color: #e4ca3a;
+  border: 1px solid #e4ca3a;
+}
+
+.champion .join-btn:hover {
+  background-color: #b19a1b;
+  color: #fff;
+}
