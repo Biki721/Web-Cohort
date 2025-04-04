@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Kanban Board</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header>
+      <h1>Kanban Board</h1>
+      <div class="mode">☀</div>
+    </header>
+    <section class="container">
+      <div class="board">
+        <h4>
+          <span class="circle" style="background-color: #ff0000"></span>
+          <span>Todo</span>
+          <span id="total-items">0</span> <span class="menu">⁝</span>
+          <span class="edit-board">
+            <span class="editing">Edit Board</span>
+            <hr />
+            <span class="delete">Delete Board</span>
+          </span>
+        </h4>
+        <p class="description">This is a todo</p>
+        <div class="items">
+          <p class="add-item"><span>+ </span> Add item</p>
+        </div>
+      </div>
+      <div class="board">
+        <h4>
+          <span class="circle" style="background-color: #00ff00"></span>
+          <span>In Progress</span> <span id="total-items">0</span
+          ><span class="menu">⁝</span>
+          <span class="edit-board">
+            <span class="editing">Edit Board</span>
+            <hr />
+            <span class="delete">Delete Board</span>
+          </span>
+        </h4>
+        <p class="description">This is in progress</p>
+        <div class="items">
+          <p class="add-item"><span>+ </span> Add item</p>
+        </div>
+      </div>
+      <div class="board">
+        <h4>
+          <span class="circle" style="background-color: #ffff00"></span>
+          <span>Done</span>
+          <span id="total-items">0</span>
+          <span class="menu">⁝</span>
+          <span class="edit-board">
+            <span class="editing">Edit Board</span>
+            <hr />
+            <span class="delete">Delete Board</span>
+          </span>
+        </h4>
+        <p class="description">This is done</p>
+        <div class="items">
+          <p class="add-item"><span>+ </span> Add item</p>
+        </div>
+      </div>
+      <div class="add-board">+</div>
+    </section>
+    <div class="modal">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h2>Title</h2>
+          <span class="close">&times;</span>
+        </div>
+        <label for="text"
+          >Name <input type="text" placeholder="Board Name" class="board-name"
+        /></label>
+
+        <label for="colors">Colors</label>
+        <div class="colors">
+          <div class="color" style="background-color: #ff0000"></div>
+          <div class="color" style="background-color: #00ff00"></div>
+          <div class="color" style="background-color: #0000ff"></div>
+          <div class="color selected" style="background-color: #ffff00"></div>
+          <div class="color" style="background-color: #ff00ff"></div>
+          <div class="color" style="background-color: #00ffff"></div>
+        </div>
+        <label for="text"
+          >Description <input type="text" placeholder="Description"
+        /></label>
+
+        <div class="modal-footer">
+          <button class="cancel button" type="submit">Cancel</button>
+          <button class="submit button" type="submit">Submit</button>
+        </div>
+      </div>
+    </div>
+    <div class="add-modal">
+      <span class="add-modal-content">
+        <span class="add-modal-header">
+          <span>Add Item</span>
+          <span class="close">&times;</span>
+        </span>
+        <label for="text"
+          >Add Task <input type="text" placeholder="Add Task" class="task-name"
+        /></label>
+        <label for="text"
+          >Assigned To
+          <input type="text" placeholder="Add Task" class="assigned-to" />
+        </label>
+        <div class="add-modal-footer">
+          <button class="cancel button" type="submit">Cancel</button>
+          <button class="submit button" type="submit">Submit</button>
+        </div>
+      </span>
+    </div>
+  </body>
+  <script src="index.js"></script>
+</html>
