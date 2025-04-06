@@ -66,6 +66,29 @@ function loadBoardsFromLocalStorage() {
     updateTotalItems(board);
   });
 }
+function initializeDefaultBoards() {
+  const savedBoards = localStorage.getItem("boards");
+  const boardsArray = savedBoards ? JSON.parse(savedBoards) : [];
+
+  // Check if boards array is empty
+  if (!boardsArray || boardsArray.length === 0) {
+    // Get default boards from HTML
+    const defaultBoards = document.querySelectorAll(".board");
+    const boardsData = Array.from(defaultBoards).map((board) => {
+      return {
+        name: board.querySelector("h4 span:nth-child(2)").textContent,
+        color: board.querySelector(".circle").style.backgroundColor,
+        description: board.querySelector(".description").textContent,
+        items: [],
+      };
+    });
+
+    // Save default boards to localStorage
+    localStorage.setItem("boards", JSON.stringify(boardsData));
+    return true; // Indicates defaults were loaded
+  }
+  return false; // Indicates existing data was found
+}
 
 function updateTotalItems(board) {
   const totalItemsElement = board.querySelector("#total-items");
@@ -110,7 +133,19 @@ function updateBoard(board, boardName, boardColor, description) {
   colorElement.style.backgroundColor = boardColor;
 }
 
-document.addEventListener("DOMContentLoaded", loadBoardsFromLocalStorage);
+document.addEventListener("DOMContentLoaded", () => {
+  // Always try to initialize defaults if needed
+  initializeDefaultBoards();
+
+  // Clear the container before loading boards
+  const container = document.querySelector(".container");
+  const addBoardButton = document.querySelector(".add-board");
+  container.innerHTML = "";
+  container.appendChild(addBoardButton);
+
+  // Load boards from localStorage
+  loadBoardsFromLocalStorage();
+});
 
 addBoard.addEventListener("click", () => {
   modal.classList.toggle("show");
@@ -181,6 +216,20 @@ document.querySelectorAll(".color").forEach((color) => {
   });
 });
 
+function deleteBoard(board) {
+  if (confirm("Are you sure you want to delete this board?")) {
+    board.remove();
+    saveBoardsToLocalStorage();
+
+    // Check if there are no boards left and reinitialize if needed
+    const savedBoards = JSON.parse(localStorage.getItem("kanbanBoards")) || [];
+    if (savedBoards.length === 0) {
+      initializeDefaultBoards();
+      loadBoardsFromLocalStorage();
+    }
+  }
+}
+
 container.addEventListener("click", (e) => {
   // Handle menu clicks
   if (e.target.classList.contains("menu")) {
@@ -222,11 +271,7 @@ container.addEventListener("click", (e) => {
   if (e.target.classList.contains("delete")) {
     const boardToDelete = e.target.closest(".board");
     if (boardToDelete) {
-      // Optional: Add confirmation before deletion
-      if (confirm("Are you sure you want to delete this board?")) {
-        boardToDelete.remove();
-        saveBoardsToLocalStorage();
-      }
+      deleteBoard(boardToDelete);
     }
   }
 

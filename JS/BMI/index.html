@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>BMI</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <section class="container">
+      <header>
+        <h1>BMI Dashboard</h1>
+      </header>
+      <section class="bmi-content">
+        <div class="bmi-result-buttons">
+          <button id="clear" class="bmi-button">Clear</button>
+          <button id="calculate" class="bmi-button">Calculate BMI</button>
+          <div id="bmi-result" class="result">BMI is ____</div>
+        </div>
+        <div class="bmi-inputs" id>
+          <div class="item item-1 measurements">Weight</div>
+          <div class="item item-2 measurements">Height</div>
+          <div class="item item-3 measurements index">Health Index</div>
+          <div class="item item-4 inputs">
+            <span>lbs</span>
+            <input type="number" name="lbs" id="lbs" />
+          </div>
+          <div class="item item-5 inputs">
+            <span>cm</span>
+            <input type="number" name="cm" id="cm" />
+          </div>
+          <div class="item item-6" id="bmiRange">
+            Your BMI range and category
+          </div>
+          <div class="item item-7 inputs">
+            <span>kg</span>
+            <input type="number" name="kg" id="kg" />
+          </div>
+          <div class="item item-8 inputs">
+            <span>in</span>
+            <input type="number" name="in" id="in" />
+          </div>
+          <div class="item item-9" id="caloriesIntake">
+            Daily calories intake
+          </div>
+          <div class="item item-10 inputs">
+            <span>gm</span>
+            <input type="number" name="gm" id="gm" />
+          </div>
+          <div class="item item-11 inputs">
+            <span>m</span>
+            <input type="number" name="m" id="m" />
+          </div>
+          <div class="item item-12" id="caloriesBurn">
+            minimum calories need to burn
+          </div>
+          <div class="item item-13 inputs">
+            <span>oz</span>
+            <input type="number" name="oz" id="oz" />
+          </div>
+          <div class="item item-14 inputs">
+            <span>ft</span>
+            <input type="number" name="ft" id="ft" />
+          </div>
+          <div class="item item-15" id="advice">Health related advice</div>
+        </div>
+      </section>
+    </section>
+  </body>
+  <script type="module" src="index.js"></script>
+</html>

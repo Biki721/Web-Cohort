@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <section>
+      <img src="" alt="" id="suraj" />
+    </section>
+  </body>
+  <script>
+    fetch("https://api.github.com/users/Biki721")
+      .then((res) => res.json())
+      .then((data) => {
+        console.log(data["avatar_url"]);
+        const image = document.getElementById("suraj");
+        image.src = data["avatar_url"];
+      });
+  </script>
+</html>

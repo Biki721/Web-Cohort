@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Navbar with Sliding Underline</title>
+    <style>
+      .navbar {
+        display: flex;
+        list-style: none;
+        padding: 0;
+      }
+
+      .navbar li {
+        margin: 0 15px;
+        position: relative;
+      }
+
+      .navbar a {
+        text-decoration: none;
+        color: black;
+        padding: 5px 0;
+        display: inline-block;
+      }
+
+      .navbar a::after {
+        content: "";
+        display: block;
+        height: 2px;
+        width: 0;
+        background: black;
+        transition: width 0.3s;
+        position: absolute;
+        bottom: 0;
+        left: 0;
+      }
+
+      .navbar a:hover::after {
+        width: 100%;
+      }
+    </style>
+  </head>
+  <body>
+    <ul class="navbar">
+      <li><a href="#">Home</a></li>
+      <li><a href="#">About</a></li>
+      <li><a href="#">Services</a></li>
+      <li><a href="#">Contact</a></li>
+    </ul>
+  </body>
+</html>
+-
