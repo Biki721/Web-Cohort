@@ -1,0 +1,26 @@
+{
+  "name": "full-stack-authentication-system-using-mongodb",
+  "version": "1.0.0",
+  "description": "a backend full stack authentication developed using express, mongoose ",
+  "type": "module",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "Express.js",
+    "Node.js",
+    "Mongoose",
+    "MongoDB",
+    "JavaScript",
+    "REST",
+    "API"
+  ],
+  "author": "Biki Dey",
+  "license": "ISC",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.7",
+    "express": "^5.1.0"
+  }
+}
