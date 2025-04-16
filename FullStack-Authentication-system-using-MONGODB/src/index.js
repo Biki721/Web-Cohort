@@ -3,6 +3,9 @@ import dotenv from "dotenv";
 import cors from "cors";
 import connectDB from "./db/index.js";
 
+//import all routes
+import userRoutes from "./routes/user.routes.js";
+
 dotenv.config();
 
 const app = express();
@@ -21,7 +24,7 @@ app.use(express.urlencoded({ extended: true }));
 const port = process.env.PORT || 8000;
 
 app.get("/", (req, res) => {
-  res.send("Welcome to the project");
+  res.send("Welcome to the Authentication project");
 });
 
 app.get("/biki", (req, res) => {
@@ -29,6 +32,10 @@ app.get("/biki", (req, res) => {
 });
 
 connectDB();
+
+//user routes
+app.use("/api/v1/users", userRoutes);
+
 app.listen(port, () => {
   console.log(`Server is running at http://localhost:${port}`);
 });
