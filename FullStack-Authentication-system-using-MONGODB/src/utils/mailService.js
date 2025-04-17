@@ -12,16 +12,12 @@ const transporter = nodemailer.createTransport({
   },
 });
 
-const sendMail = async (email, token) => {
+const sendMail = async (email, emailSubject, emailHtml) => {
   const mailOption = {
     from: process.env.MAILTRAP_SENDEREMAIL,
     to: email,
-    subject: "Verify your email", // Subject line
-    html: `<p>Please click on the following link: </p>
-          <a href="${process.env.FRONTEND_BASE_URL}/api/v1/users/verify/${token}">
-        Verify Email
-      </a>
-          `,
+    subject: emailSubject, // Subject line
+    html: emailHtml,
   };
 
   await transporter.sendMail(mailOption);
