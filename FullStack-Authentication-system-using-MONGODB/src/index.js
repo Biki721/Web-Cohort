@@ -3,6 +3,7 @@ import dotenv from "dotenv";
 import cors from "cors";
 import connectDB from "./db/index.js";
 import cookieParser from "cookie-parser";
+import { errorHandler } from "./middlewares/error.middleware.js";
 
 //import all routes
 import userRoutes from "./routes/user.routes.js";
@@ -37,6 +38,7 @@ connectDB();
 
 //user routes
 app.use("/api/v1/users", userRoutes);
+app.use(errorHandler);
 
 app.listen(port, () => {
   console.log(`Server is running at http://localhost:${port}`);
