@@ -68,15 +68,16 @@ export const verifyUser = asyncHandler(async (req, res) => {
     throw new ApiError(400, "Invalid token");
   }
 
-  user.isVerified = true;
-  user.verificationToken = undefined;
-
   await prisma.user.update({
     where: { id: user.id },
-    data: user,
+    data: {
+      isVerified: true,
+      verificationToken: null, // use null instead of undefined
+    },
   });
 
   res
     .status(201)
     .json(new ApiResponse(200, "null", "User verified successfully"));
 });
+
